@@ -3,7 +3,6 @@ var campos = [
 	document.querySelector('#quantidade'),
 	document.querySelector('#valor')
 ];
-console.log(campos);
 
 // tbody - recebera a tr que vamos construir
 var tbody = document.querySelector('table tbody');
@@ -38,7 +37,4 @@ document.querySelector('.form').addEventListener('submit', function(event) {
 	campos[1].value = '';
 	campos[2].value = '';
 	campos[0].focus();
-
-	console.log(campos)
-
 })
