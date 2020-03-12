@@ -1,5 +1,5 @@
 class Negociacao {
-    constructor(data, quantidade, valor) {
+    constructor(_data, _quantidade, _valor) {
         /*
         this._data = new Date(data.getTime())
         this._quantidade = quantidade
@@ -9,11 +9,9 @@ class Negociacao {
         Object.freeze(this)
         */
        // forma de encapsulamento com Object.assign()
-       Object.assign(this, {
-           _data: new Date(data.getTime()),
-           _quantidade: quantidade,
-           _valor: valor
-       });
+       // garante a imutabilidade dos daddos
+       Object.assign(this, { _quantidade, _valor });
+       this._data = new Date(_data.getTime()),
        Object.freeze(this);
     }
 
