@@ -12,11 +12,22 @@ class NegociacaoController {
     }
 
     adiciona(event) {
-        event.preventDefault()
+        event.preventDefault();
 
-        // precisamos acessar as funcionalidades através do this
-        console.log(this._inputData.value)
-        console.log(parseInt(this._inputQuantidade.value))
-        console.log(parseFloat(this._inputValor.value))
+        // instanciando uma nova Negociação
+        // passando os dados dos campos do formulario
+        // usando metodo estatico para conversao de data
+        let negociacao = new Negociacao(
+            DateConverter.paraData(this._inputData.value),
+            parseInt(this._inputQuantidade.value),
+            parseFloat(this._inputValor.value)
+        );
+
+        console.log(negociacao.data)
+
+        // converte data para texto formato dia/mes/ano
+        let diaMesAno = DateConverter.paraTexto(negociacao.data)
+
+        console.log(diaMesAno);
     }
 }
