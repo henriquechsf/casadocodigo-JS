@@ -13,7 +13,8 @@ class NegociacaoController {
         this._negociacoesView = new NegociacoesView('#negociacoes')
 
         // atualizando a view
-        this._negociacoesView.update();
+        // recebe inicialmente o modelo que encapsula uma lista vazia
+        this._negociacoesView.update(this._negociacoes);
     }
 
     adiciona(event) {

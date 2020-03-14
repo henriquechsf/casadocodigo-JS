@@ -1,15 +1,18 @@
 class NegociacoesView {
     // pega o elemento html onde sera renderizado o template
     constructor(seletor) {
-        this.elemento = document.querySelector(seletor);
+        this._elemento = document.querySelector(seletor);
     }
 
     // renderiza o template na DOM
-    update() {
-        this.elemento.innerHTML = this.template();
+    update(model) {
+        // repassa o model para o template
+        this._elemento.innerHTML = this.template(model);
     }
 
-    template() {
+    // PARAMETRO AQUI
+    // deve retornar o template baseado no model
+    template(model) {
         return `
             <table class="table table-hover table-bordered">
                 <thead>
