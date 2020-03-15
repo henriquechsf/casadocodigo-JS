@@ -1,6 +1,8 @@
 class Negociacoes {
-    constructor() {
+    // recebe parametro para alterar o estado
+    constructor(armadilha) {
         this._negociacoes = [];
+        this._armadilha = armadilha;
 
         // CONGELOU A INSTANCIA
         Object.freeze(this);
@@ -8,6 +10,9 @@ class Negociacoes {
 
     adiciona(negociacao) {
         this._negociacoes.push(negociacao);
+
+        // atualizando o estado
+        this._armadilha(this);
     }
 
     paraArray() {
@@ -25,5 +30,8 @@ class Negociacoes {
         // eliminando todos itens do array
         // usado .length devido a instancia estar congelada Object.freeze
         this._negociacoes.length = 0;
+
+        // atualizando o estado
+        this._armadilha(this);
     }
 }

@@ -9,7 +9,12 @@ class NegociacaoController {
         this._inputData = $('#data')
         this._inputQuantidade = $('#quantidade')
         this._inputValor = $('#valor')
-        this._negociacoes = new Negociacoes()
+
+        // atualiza o estado
+        this._negociacoes = new Negociacoes(model => {
+            this._negociacoesView.update(model);
+        })
+
         this._negociacoesView = new NegociacoesView('#negociacoes')
 
         // atualizando a view
@@ -33,8 +38,9 @@ class NegociacaoController {
         // exibe mensagem de sucesso
         this._mensagem.texto = 'Negociação adicionada com sucesso';
 
+        // após o uso da armadilha não precisamos mais
         // atualiza o conteudo na tela quando adicionar negociação
-        this._negociacoesView.update(this._negociacoes)
+        // this._negociacoesView.update(this._negociacoes)
 
         // atualiza a view com o texto da mensagem de sucesso
         this._mensagemView.update(this._mensagem);
@@ -45,7 +51,9 @@ class NegociacaoController {
 
     apaga() {
         this._negociacoes.esvazia();
-        this._negociacoesView.update(this._negociacoes);
+        // após o uso da armadilha não precisamos mais
+        // this._negociacoesView.update(this._negociacoes);
+
         this._mensagem.texto = 'Negociações apagadas com sucesso';
         this._mensagemView.update(this._mensagem);
     }
