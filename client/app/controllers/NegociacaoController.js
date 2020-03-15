@@ -18,6 +18,10 @@ class NegociacaoController {
 
         // instanciando o modelo Mensagem
         this._mensagem = new Mensagem();
+
+        // setando elemento HTML na index
+        this._mensagemView = new MensagemView('#mensagemView');
+        this._mensagemView.update(this._mensagem);
     }
 
     adiciona(event) {
@@ -32,8 +36,8 @@ class NegociacaoController {
         // atualiza o conteudo na tela quando adicionar negociação
         this._negociacoesView.update(this._negociacoes)
 
-        // imprime a lista com o novo elemento no console
-        console.log(this._negociacoes.paraArray())
+        // atualiza a view com o texto da mensagem de sucesso
+        this._mensagemView.update(this._mensagem);
 
         // limpando o formulario
         this._limpaFormulario();
