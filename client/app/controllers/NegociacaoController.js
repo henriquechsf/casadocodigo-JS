@@ -15,6 +15,9 @@ class NegociacaoController {
         // atualizando a view
         // recebe inicialmente o modelo que encapsula uma lista vazia
         this._negociacoesView.update(this._negociacoes);
+
+        // instanciando o modelo Mensagem
+        this._mensagem = new Mensagem();
     }
 
     adiciona(event) {
@@ -22,6 +25,9 @@ class NegociacaoController {
 
         // inclui a negociação
         this._negociacoes.adiciona(this._criaNegociacao())
+
+        // exibe mensagem de sucesso
+        this._mensagem.texto = 'Negociação adicionada com sucesso';
 
         // atualiza o conteudo na tela quando adicionar negociação
         this._negociacoesView.update(this._negociacoes)
