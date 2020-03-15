@@ -25,9 +25,9 @@ class NegociacoesView {
                 </thead>
 
                 <tbody>
-                    ${model.paraArray().map(negociacao => {
+                    ${model.paraArray().map(negociacao =>
 
-                        return `
+                        `
                             <tr>
                                 <td>${DateConverter.paraTexto(negociacao.data)}</td>
                                 <td>${negociacao.quantidade}</td>
@@ -35,11 +35,14 @@ class NegociacoesView {
                                 <td>${negociacao.volume}</td>
                             </tr>
                         `
-                    }).join('')}
+                    ).join('')}
                 </tbody>
 
                 <tfoot>
-
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>${model.volumeTotal}</td>
+                    </tr>
                 </tfoot>
             </table>
         `
