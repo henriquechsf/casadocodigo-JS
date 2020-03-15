@@ -23,7 +23,10 @@ class NegociacaoController {
         // inclui a negociação
         this._negociacoes.adiciona(this._criaNegociacao())
 
-        // imprime a lista com o novo elemento
+        // atualiza o conteudo na tela quando adicionar negociação
+        this._negociacoesView.update(this._negociacoes)
+
+        // imprime a lista com o novo elemento no console
         console.log(this._negociacoes.paraArray())
 
         // limpando o formulario
