@@ -41,7 +41,7 @@ class NegociacoesView {
                 <tfoot>
                     <tr>
                         <td colspan="3"></td>
-                        <td>${model.volumeTotal}</td>
+                        <td><strong>${model.volumeTotal}</strong></td>
                     </tr>
                 </tfoot>
             </table>
