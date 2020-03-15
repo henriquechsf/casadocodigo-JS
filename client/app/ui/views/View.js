@@ -8,4 +8,10 @@ class View {
     update(model) {
         this._elemento.innerHTML = this.template(model);
     }
+
+    // classe abstrata
+    template(model) {
+
+        throw new Error('Você precisa implementar o método template');
+    }
 }

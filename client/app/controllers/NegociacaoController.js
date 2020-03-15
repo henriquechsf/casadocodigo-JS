@@ -3,7 +3,7 @@ class NegociacaoController {
     constructor() {
         // atribuindo uma variavel $ ao querySelector
         // realizando bind, $ mantém document como o seu contexto this
-        let $ = document.querySelector.bind(document)
+        const $ = document.querySelector.bind(document)
 
         // buscando os elementos
         this._inputData = $('#data')
